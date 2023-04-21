@@ -1,0 +1,26 @@
+.card-main {
+  transition: all 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;
+
+  .card-body {
+    color: black;
+  }
+
+  .card-img-top {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .list-group {
+    background-color: rgb(0, 120, 130);
+    color: white;
+  }
+}
+
+.card-main:hover {
+  transform: scale(1.08);
+
+  .card-img-top {
+    transform: rotate(5deg) scale(1.09);
+  }
+}

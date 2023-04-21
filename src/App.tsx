@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Buyer from "./pages/Buyer";
+import Agent from "./pages/Agent";
+import Admin from "./pages/Admin";
+import AgentDashboard from "./pages/AgentDashboard";
+import BuyerDashboard from "./pages/BuyerDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
+import ViewProperties from "./pages/ViewProperties";
+import ViewSearches from "./pages/ViewSearches";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/buyer" element={<Buyer />} />
+          <Route path="/agent" element={<Agent />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/adminDash" element={<AdminDashboard />} />
+          <Route path="/AgentDashboard" element={<AgentDashboard />} />
+          <Route path="/BuyerDashboard" element={<BuyerDashboard />} />
+          <Route path="/ViewProperties" element={<ViewProperties />} />
+          <Route path="/ViewSearches" element={<ViewSearches />} />
+        </Routes>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
